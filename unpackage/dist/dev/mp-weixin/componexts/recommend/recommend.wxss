@@ -1,0 +1,63 @@
+.recommendContainer {
+  height: 2000rpx;
+}
+.recommendContainer swiper {
+  width: 100%;
+  height: 370rpx;
+}
+.recommendContainer swiper image {
+  width: 100%;
+  height: 370rpx;
+}
+.recommendContainer .indexServicePolicy {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-around;
+          justify-content: space-around;
+  height: 70rpx;
+}
+.recommendContainer .indexServicePolicy .PolicyItem {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.recommendContainer .indexServicePolicy .PolicyItem ._img {
+  width: 30rpx;
+  height: 30rpx;
+}
+.recommendContainer .indexServicePolicy .PolicyItem ._span {
+  font-size: 25rpx;
+}
+.recommendContainer .kingKongList {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+.recommendContainer .kingKongList .kingKongItem {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  width: 20%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.recommendContainer .kingKongList .kingKongItem ._img {
+  width: 110rpx;
+  height: 110rpx;
+}
+.recommendContainer .kingKongList .kingKongItem ._p {
+  font-size: 25rpx;
+  padding: 15rpx;
+}
+
