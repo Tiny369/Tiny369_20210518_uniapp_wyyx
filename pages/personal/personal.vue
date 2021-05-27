@@ -1,6 +1,6 @@
 <template>
 	<view>
-		category
+		personal
 	</view>
 </template>
 

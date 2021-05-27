@@ -46,7 +46,21 @@
 				<p>{{kingKongListItem.text}}</p>
 			</div>
 		</div>
-
+		
+		<!-- categoryModule 区域 -->
+		<div class="categoryModule">
+			<div class="categoryModuleList" v-for="(categoryModuleItem,index) in indexDatas.categoryModule" 
+				:key="index">
+				<image class="bigImg" :src="categoryModuleItem.titlePicUrl" mode=""></image>
+				<scroll-view scroll-x="true" class="scrollItemListContainer">
+					<view class="scrollItemList" v-for="(scrollItem,index) in categoryModuleItem.itemList" :key="index">
+						<image class="scrollItemImg" :src="scrollItem.primaryPicUrl" mode=""></image>
+						<p>{{scrollItem.name}}</p>
+					</view>
+					<view class="scrollItemList more"> 查看更多>>> </view>
+				</scroll-view>
+			</div>
+		</div>
 
 	</div>
 </template>
@@ -59,7 +73,7 @@
 
 <style lang="stylus">
 	.recommendContainer
-		height 2000upx
+		// height 2000upx
 		swiper
 			width 100%
 			height 370upx
@@ -92,4 +106,41 @@
 				p
 					font-size 25upx
 					padding 15upx
+		.categoryModule
+			.categoryModuleList
+				.bigImg
+					width 100%
+					height 375upx
+				.scrollItemListContainer
+					margin-bottom 20upx
+					white-space nowrap
+					.scrollItemList
+						display inline-block
+						width 200upx
+						vertical-align top
+						margin-left 20upx
+						&.more
+							width 200upx
+							height 200upx
+							line-height 280upx
+							background-color #eee
+							text-align center
+						.scrollItemImg
+							width 200upx
+							height 200upx
+							background-color #eee
+						p
+							font-size 26upx
+							white-space pre-wrap  /*单行文本换行*/
+							// 多行文本溢出显示省略号 4步骤
+							display: -webkit-box;    
+							-webkit-box-orient: vertical;    
+							-webkit-line-clamp: 2;    
+							overflow: hidden;
+					
+						
+					
+						
+					
+		
 </style>

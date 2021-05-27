@@ -1,6 +1,3 @@
-.recommendContainer {
-  height: 2000rpx;
-}
 .recommendContainer swiper {
   width: 100%;
   height: 370rpx;
@@ -59,5 +56,39 @@
 .recommendContainer .kingKongList .kingKongItem ._p {
   font-size: 25rpx;
   padding: 15rpx;
+}
+.recommendContainer .categoryModule .categoryModuleList .bigImg {
+  width: 100%;
+  height: 375rpx;
+}
+.recommendContainer .categoryModule .categoryModuleList .scrollItemListContainer {
+  margin-bottom: 20rpx;
+  white-space: nowrap;
+}
+.recommendContainer .categoryModule .categoryModuleList .scrollItemListContainer .scrollItemList {
+  display: inline-block;
+  width: 200rpx;
+  vertical-align: top;
+  margin-left: 20rpx;
+}
+.recommendContainer .categoryModule .categoryModuleList .scrollItemListContainer .scrollItemList.more {
+  width: 200rpx;
+  height: 200rpx;
+  line-height: 280rpx;
+  background-color: #eee;
+  text-align: center;
+}
+.recommendContainer .categoryModule .categoryModuleList .scrollItemListContainer .scrollItemList .scrollItemImg {
+  width: 200rpx;
+  height: 200rpx;
+  background-color: #eee;
+}
+.recommendContainer .categoryModule .categoryModuleList .scrollItemListContainer .scrollItemList ._p {
+  font-size: 26rpx;
+  white-space: pre-wrap /*单行文本换行*/;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
