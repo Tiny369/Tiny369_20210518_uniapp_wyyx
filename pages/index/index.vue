@@ -21,10 +21,10 @@
 			</view>
 		</scroll-view> -->
 		<scroll-view class="navScrollContainer" scroll-x="true" >
-			<view @click="activeItemIndex(0)" class="navListItem" :class="{activeItem:activeIndex === 0}" >
+			<view @click="activeItemIndex(0,0)" class="navListItem" :class="{activeItem:activeIndex === 0}" >
 				推荐
 			</view>
-			<view @click="activeItemIndex(index+1)" class="navListItem" 
+			<view @click="activeItemIndex(index+1,listItem.L1Id)" class="navListItem" 
 				:class="{activeItem:activeIndex === (index+1)}"  v-for="(listItem,index) in indexDatas.kingKongModule.kingKongList" :key="index">
 				{{listItem.text}}
 			</view>
@@ -33,7 +33,10 @@
 		<!-- 内容区-->
 		<scroll-view scroll-y="true" class="contentScroll">
 			<view class="contentContainer">
-				<Recommend :indexDatas="indexDatas"></Recommend>
+				<!-- 推荐导航0 内容 -->
+				<Recommend :indexDatas="indexDatas" v-if="activeIndex === 0"></Recommend>
+				<!-- 导航1 内容 -->
+				<CateList v-if="activeIndex !== 0" :navId="navId"></CateList>
 			</view>
 		</scroll-view>
 		
@@ -44,9 +47,11 @@
 <script>
 	import request from '../../utils/request.js'
 	import Recommend from '../../componexts/recommend/recommend.vue'
+	import CateList from '../../componexts/cateList/cateList.vue'
 	export default {
 		components:{
-			Recommend
+			Recommend,
+			CateList
 		},
 		data() {
 			return {
@@ -63,14 +68,17 @@
 					'严选全球',
 				],
 				// 点击项下标
-				activeIndex:0,
+				activeIndex:1,
 				// 首页数据
-				indexDatas:{}
+				indexDatas:{},
+				// 导航栏项的唯一ID标识
+				navId:111
 			}
 		},
 		methods: {
-			activeItemIndex (index){
+			activeItemIndex (index,navId){
 				this.activeIndex = index
+				this.navId = navId
 			}
 		},
 		async mounted() {
